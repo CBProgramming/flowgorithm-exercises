@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.6">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Chris"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2017-10-22 01:23:26 PM"/>
+        <attribute name="created" value="Q2hyaXM7IERFU0tUT1AtUjM5VFVNTzsgMjAxNy0xMC0yMjsgMDE6MTM6MTEgUE07IDI5NjU="/>
+        <attribute name="edited" value="Q2hyaXM7IERFU0tUT1AtUjM5VFVNTzsgMjAxNy0xMC0yMjsgMDE6MjM6MjYgUE07IDI5NzI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Table" type="Integer" array="True" size="10"/>
+            <declare name="Index" type="Integer" array="False" size=""/>
+            <declare name="DataString" type="String" array="False" size=""/>
+            <assign variable="Datastring" expression="&quot;&quot;"/>
+            <for variable="Index" start="0" end="Size(Table)-1" direction="inc" step="1">
+                <assign variable="table[index]" expression="random(100)"/>
+                <assign variable="DataString" expression="Datastring &amp; tostring(table[index]) &amp; &quot; &quot;"/>
+            </for>
+            <output expression="Datastring"/>
+        </body>
+    </function>
+</flowgorithm>

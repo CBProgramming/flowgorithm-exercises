@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.6">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Chris"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2017-10-22 01:45:23 PM"/>
+        <attribute name="created" value="Q2hyaXM7IERFU0tUT1AtUjM5VFVNTzsgMjAxNy0xMC0yMjsgMDE6MTM6MTEgUE07IDI5NjU="/>
+        <attribute name="edited" value="Q2hyaXM7IERFU0tUT1AtUjM5VFVNTzsgMjAxNy0xMC0yMjsgMDE6NDU6MjMgUE07IDI5NzM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Table" type="Integer" array="True" size="10"/>
+            <declare name="Index" type="Integer" array="False" size=""/>
+            <declare name="Total" type="Integer" array="False" size=""/>
+            <assign variable="Total" expression="0"/>
+            <declare name="Average" type="Real" array="False" size=""/>
+            <declare name="Range" type="Integer" array="False" size=""/>
+            <declare name="SmallestNumber" type="Integer" array="False" size=""/>
+            <declare name="SmallestNumberIndex" type="Integer" array="False" size=""/>
+            <assign variable="SmallestNumber" expression="100"/>
+            <declare name="LargestNumber" type="Integer" array="False" size=""/>
+            <assign variable="LargestNumber" expression="0"/>
+            <declare name="LargestNumberIndex" type="Integer" array="False" size=""/>
+            <declare name="EvenNumbers" type="Integer" array="False" size=""/>
+            <assign variable="EvenNumbers" expression="0"/>
+            <declare name="OddNumbers" type="Integer" array="False" size=""/>
+            <assign variable="OddNumbers" expression="0"/>
+            <declare name="DataString" type="String" array="False" size=""/>
+            <assign variable="Datastring" expression="&quot;&quot;"/>
+            <for variable="Index" start="0" end="Size(Table)-1" direction="inc" step="1">
+                <assign variable="table[index]" expression="random(100)"/>
+                <assign variable="Total" expression="Total + Table[index]"/>
+                <assign variable="DataString" expression="Datastring &amp; tostring(table[index]) &amp; &quot; &quot;"/>
+                <if expression="Table[index] &lt; SmallestNumber">
+                    <then>
+                        <assign variable="SmallestNumber" expression="Table[Index]"/>
+                        <assign variable="SmallestNumberIndex" expression="Index"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="Table[Index] &gt; LargestNumber">
+                    <then>
+                        <assign variable="LargestNumber" expression="Table[Index]"/>
+                        <assign variable="LargestNumberIndex" expression="Index"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="Table[Index] % 2 = 0">
+                    <then>
+                        <assign variable="EvenNumbers" expression="EvenNumbers + 1"/>
+                    </then>
+                    <else>
+                        <assign variable="OddNumbers" expression="OddNumbers + 1"/>
+                    </else>
+                </if>
+            </for>
+            <output expression="&quot;Dataset = &quot; &amp; Datastring"/>
+            <output expression="&quot;Total = &quot; &amp; Total"/>
+            <assign variable="Average" expression="Total / Size(Table)"/>
+            <output expression="&quot;Average = &quot; &amp; Average"/>
+            <output expression="&quot;Largest Number = &quot; &amp; LargestNumber"/>
+            <output expression="&quot;Largest number is in array position &quot; &amp; LargestNumberIndex"/>
+            <output expression="&quot;Smallest Number = &quot; &amp; SmallestNumber"/>
+            <output expression="&quot;Smallest number is in array position &quot; &amp; SmallestNumberIndex"/>
+            <assign variable="Range" expression="LargestNumber - SmallestNumber"/>
+            <output expression="&quot;Range = &quot; &amp; Range"/>
+            <output expression="&quot;There are &quot; &amp; EvenNumbers &amp; &quot; even numbers and &quot; &amp; OddNumbers &amp; &quot; odd numbers&quot;"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.6">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Chris"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2017-11-05 12:50:51 PM"/>
+        <attribute name="created" value="Q2hyaXM7IERFU0tUT1AtUjM5VFVNTzsgMjAxNy0xMS0wNTsgMTI6MTg6NDQgUE07IDI5ODA="/>
+        <attribute name="edited" value="Q2hyaXM7IERFU0tUT1AtUjM5VFVNTzsgMjAxNy0xMS0wNTsgMTI6NTA6NTEgUE07IDI5NzQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Number" type="Integer" array="False" size=""/>
+            <assign variable="Number" expression="GetNumber()"/>
+            <declare name="Prime" type="String" array="False" size=""/>
+            <assign variable="Prime" expression="CheckIfPrime(Number)"/>
+            <output expression="Prime"/>
+        </body>
+    </function>
+    <function name="CheckIfPrime" type="String" variable="IsPrime">
+        <parameters>
+            <parameter name="Num" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="Count" type="Integer" array="False" size=""/>
+            <declare name="IsPrime" type="String" array="False" size=""/>
+            <assign variable="IsPrime" expression="&quot;The number is prime&quot;"/>
+            <assign variable="Count" expression="2"/>
+            <for variable="Count" start="2" end="Num / 2" direction="inc" step="1">
+                <if expression="Num % Count == 0">
+                    <then>
+                        <assign variable="IsPrime" expression="&quot;The number is not prime&quot;"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+    <function name="GetNumber" type="Integer" variable="Num">
+        <parameters/>
+        <body>
+            <declare name="Num" type="Integer" array="False" size=""/>
+            <output expression="&quot;Please enter a number: &quot;"/>
+            <input variable="Num"/>
+        </body>
+    </function>
+</flowgorithm>
